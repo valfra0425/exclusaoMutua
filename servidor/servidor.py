@@ -33,7 +33,6 @@ def deposito(connection, address):
 def saque(connection, address):
     try:
         valor = float(connection.recv(1024).decode())
-        time.sleep(5)
         global saldo
         if (valor > saldo):
             connection.send("error".encode())
